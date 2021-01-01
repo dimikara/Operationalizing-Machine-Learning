@@ -1,8 +1,0 @@
-Lesson 3 consume Endpoints - 5. Exercise: Swagger Documentation - the python serve.py do not execute => on browser ERR_CONNECTION_REFUSEDerror
-https://knowledge.udacity.com/questions/370957
-
-
-https://knowledge.udacity.com/questions/408864
-
-
-
