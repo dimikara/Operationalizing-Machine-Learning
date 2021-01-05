@@ -113,6 +113,6 @@ Concluding, the high data imbalance is something that can be handled in a future
 - A very interesting paper on the imbalanced classes issue: [Analysis of Imbalance Strategies Recommendation using a
 Meta-Learning Approach](https://www.automl.org/wp-content/uploads/2020/07/AutoML_2020_paper_34.pdf)
 - [Imbalanced Data : How to handle Imbalanced Classification Problems](https://www.analyticsvidhya.com/blog/2017/03/imbalanced-data-classification/)
-
+- [Consume an Azure Machine Learning model deployed as a web service](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-consume-web-service?tabs=python)
 
 
