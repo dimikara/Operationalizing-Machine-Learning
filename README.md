@@ -4,6 +4,7 @@
    * [Overview](#Overview)
    * [Architectural Diagram](#Architectural-Diagram)
    * [Key Steps](#Key-Steps)
+   * [Screenshots](#Screenshots)
    * [Screen Recording](#Screen-Recording)
    * [Future work](#Future-work)
    * [Standout Suggestions](#Standout-Suggestions)
@@ -35,7 +36,7 @@ The diagram below is a visualization of the flow of operations from start to fin
 The key steps of the project are described below:
 
 - **Authentication:**
-This step was actually omitted since it could not be implemented in the lab provided by Udacity. However, I am still mentioning it here as it is a crucial step if one uses their own Azure account.
+This step was actually omitted since it could not be implemented in the lab space provided by Udacity. However, I am still mentioning it here as it is a crucial step if one uses their own Azure account but, apparently, I am not including a screenshot.
 
 - **Automated ML Experiment:**
 At this point, security is enabled and authentication is completed. This step involves the creation of an experiment using Automated ML, configuring a compute cluster, and using that cluster to run the experiment.
@@ -50,13 +51,22 @@ After the deployment of the Best Model, I enabled Application Insights and retri
 This is the step where the deployed model will be consumed using Swagger. Azure provides a Swagger JSON file for deployed models. We can find the deployed model in the _Endpoints_ section, where it should be the first one on the list.
 
 - **Consume Model Endpoints:**
-Once the model is deployed, I am using the ```endpoint.py``` script to interact with the trained model. I run the script with the _scoring_uri_ that was generated after deployment and the _key_ of the service. This URI is found in the _Details_ tab, above the Swagger URI.
+Once the model is deployed, I am using the ```endpoint.py``` script to interact with the trained model. I run the script with the _scoring_uri_ that was generated after deployment and -since I enabled Authentication- the _key_ of the service. This URI is found in the _Details_ tab, above the Swagger URI.
 
 - **Create and Publish a Pipeline:**
 In this part of the project, I am using the Jupyter Notebook with the same keys, URI, dataset, cluster, and model names already created.
 
 - **Documentation:**
 The documentation includes: 1. the [screencast](YouTube-link) that shows the entire process of the working ML application; and 2. this README file that describes the project and documents the main steps.
+
+***
+
+## Screenshots
+
+
+
+
+
 
 ***
 ## Screen Recording
@@ -89,7 +99,7 @@ There are many other methods as well, but I will not get into much details here 
 
 Concluding, the high data imbalance is something that can be handled in a future execution, leading to an obvious improvement of the model.
 
-* Another factor that I would improve is **n_cross_validations**. As cross-validation is the process of taking many subsets of the full training data and training a model on each subset, the higher the number of cross validations is, the higher the accuracy achieved is. However, a high number also raises computation time (a.k.a. training time) thus costs so there must be a balance between the two factors.
+* Another factor that I would improve is **n_cross_validations**. As cross-validation is the process of taking many subsets of the full training data and training a model on each subset, the higher the number of cross validations is, the higher the accuracy achieved is. However, a high number also raises computation time (a.k.a. training time) thus costs, so there must be a balance between the two factors.
 
     _Note_: In case I would be able to improve ```n_cross_validations```, I would also have to increase ```experiment_timeout_minutes``` as the current setting of 15 minutes would not be enough. 
 
