@@ -6,8 +6,7 @@
    * [Key Steps](#Key-Steps)
    * [Screenshots](#Screenshots)
    * [Screen Recording](#Screen-Recording)
-   * [Future work](#Future-work)
-   * [Standout Suggestions](#Standout-Suggestions)
+   * [Future improvements](#Future-improvements-and-suggestions)
    * [Dataset Citation](#Dataset-Citation)
    * [References](#References)
 
@@ -16,9 +15,9 @@
 
 ## Overview
 
-In this project, I used Azure to configure a cloud-based machine learning production model, deploy it, and consume it. After that, I created, published, and consumed a pipeline. The whole procedure is explained in this README file and is demonstrated in a screencast video.
+In this project, I used Azure Machine Learning to configure a cloud-based machine learning production model, deploy it, and consume it. After that, I created, published, and consumed a pipeline. The whole procedure is explained in this README file and is demonstrated in a screencast video.
 
-The dataset used can be obtained from [here](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv) and contains marketing data about individuals. The data is related with direct marketing campaigns (phone calls) of a Portuguese banking institution. The classification goal is to predict whether the client will subscribe a bank term deposit (column y).
+The dataset used can be obtained from [here](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv) and contains marketing data about individuals. The data is related with direct marketing campaigns (phone calls) of a Portuguese banking institution. The classification goal is to predict whether the client will subscribe a bank term deposit. The result of the prediction appears in _`column y`_ and it is either _`yes`_ or _`no`_.
 
 ***
 ## Architectural Diagram
@@ -94,32 +93,27 @@ The screen recording can be found [here](YouTube-link) and it shows the project 
 * The deployed Pipeline
 * Available AutoML Model
 * Successful API requests to the endpoint with a JSON payload
-* The Jupyter Notebook
+
 
 ***
-## Future improvements
+## Future improvements and suggestions
 
 * As I have pointed out in the 1st project as well, the data is **highly imbalanced**:
 
 ![Highly imbalanced data](img/Imbalanced_data_plot.png?raw=true "Highly imbalanced data")
 
-Although AutoML normally takes into account this imbalance automatically, there is definitely more room to improve the model's accuracy in predicting the minority class. For example, we could use Random Under-Sampling of majority class, or Random Over-Sampling of minority class, or even try different algorithms.
+Although AutoML normally takes into account this imbalance automatically, there should be more room to improve the model's accuracy in predicting the minority class. For example, we could use Random Under-Sampling of majority class, or Random Over-Sampling of minority class, or even try different algorithms.
 
-* Another factor that could be improved is **n_cross_validations**. As cross-validation is the process of taking many subsets of the full training data and training a model on each subset, the higher the number of cross validations is, the higher the accuracy achieved is. However, a high number also raises computation time (a.k.a. training time) thus costs, so there must be a balance between the two factors.
+* Another factor that could improve the model is increasing the training time. This suggestion might be seen as a no-brainer, but it would also increase costs and there must always be a balance between minimum required accuracy and assigned budget.
 
-    _Note_: In case I would be able to improve ```n_cross_validations```, I would also have to increase ```experiment_timeout_minutes``` as the current setting of 15 minutes would not be enough. 
+* I could not help but wonder how more accurate would be the resulting model in case Deep Learning was used, as we were specifically instructed _NOT_ to enable it in the AutoML settings. While searching for more info, I found this very interesting article in Microsoft Docs: [Deep learning vs. machine learning in Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/concept-deep-learning-vs-machine-learning). There is says that deep learning excels at identifying patterns in unstructured data such as images, sound, video, and text. In my understanding, it might be an overkill to use it in a classification problem like this.
 
-
-* Lastly, a thing that we should be aware of is any future change(s) in the dataset that could impact the accuracy of the model. I do not have any experience on how this could be done in an automated way, but I am sure such a method exists and can be spotted when the need arises.
-
-***
-## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+* Lastly, a thing that could be taken into account is any future change(s) in the dataset that could impact the accuracy of the model. I do not have any experience on how this could be done in an automated way, but I am sure that a method exists and can be spotted if/when such a need arises.
 
 ***
 ## Dataset Citation
 
-[Moro et al., 2014] S. Moro, P. Cortez and P. Rita. A Data-Driven Approach to Predict the Success of Bank Telemarketing. Decision Support Systems, Elsevier, 62:22-31, June 2014
+[Moro et al., 2014] S. Moro, P. Cortez and P. Rita. A Data-Driven Approach to Predict the Success of Bank Telemarketing. Decision Support Systems, Elsevier, 62:22-31, June 2014.
 
 ***
 ## References
@@ -133,5 +127,5 @@ Although AutoML normally takes into account this imbalance automatically, there 
 Meta-Learning Approach](https://www.automl.org/wp-content/uploads/2020/07/AutoML_2020_paper_34.pdf)
 - [Imbalanced Data : How to handle Imbalanced Classification Problems](https://www.analyticsvidhya.com/blog/2017/03/imbalanced-data-classification/)
 - [Consume an Azure Machine Learning model deployed as a web service](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-consume-web-service?tabs=python)
-
+- [Deep learning vs. machine learning in Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/concept-deep-learning-vs-machine-learning)
 
