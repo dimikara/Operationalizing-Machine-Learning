@@ -36,7 +36,7 @@ The diagram below is a visualization of the flow of operations from start to fin
 The key steps of the project are described below:
 
 - **Authentication:**
-This step was actually omitted since it could not be implemented in the lab space provided by Udacity. However, I am still mentioning it here as it is a crucial step if one uses their own Azure account but, apparently, I am not including a screenshot.
+This step was actually omitted since it could not be implemented in the lab space provided by Udacity, because I am not authorized to create a security principal. However, I am still mentioning it here as it is a crucial step if one uses their own Azure account but, obviously, I am not including a screenshot.
 
 - **Automated ML Experiment:**
 At this point, security is enabled and authentication is completed. This step involves the creation of an experiment using Automated ML, configuring a compute cluster, and using that cluster to run the experiment.
@@ -63,45 +63,54 @@ The documentation includes: 1. the [screencast](YouTube-link) that shows the ent
 
 ## Screenshots
 
+**Step 2: Automated ML Experiment**
 
+![Step 2 required screenshots](img/Step2-required_screenshots.JPG?raw=true "Step 2 required screenshots")
 
+**Step 4: Enable Application Insights**
+
+![Step 4 required screenshots](img/Step4-required_screenshots.JPG?raw=true "Step 4 required screenshots")
+
+**Step 5: Swagger Documentation**
+
+![Step 5 required screenshots](img/Step5-required_screenshots.JPG?raw=true "Step 5 required screenshots")
+
+**Step 6: Consume Model Endpoints**
+
+![Step 6 required screenshots](img/Step6-required_screenshots.JPG?raw=true "Step 6 required screenshots")
+
+**Step 7: Create, Publish and Consume a Pipeline**
+
+![Step 7 required screenshots](img/Step7-required_screenshots.JPG?raw=true "Step 7 required screenshots")
 
 
 
 ***
 ## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
 
-[sadmi]
-* The working deployed ML model endpoint.
+The screen recording can be found [here](YouTube-link) and it shows the project in action. More specifically, the screencast demonstrates:
+
+* The working deployed ML model endpoint
 * The deployed Pipeline
 * Available AutoML Model
 * Successful API requests to the endpoint with a JSON payload
 * The Jupyter Notebook
 
 ***
-## Future work ---->>>ΝΑ ΤΟ ΑΛΛΑΞΩ - ΕΙΝΑΙ ΙΔΙΟ ΜΕ ΤΟ PROJECT 1
+## Future improvements
 
-* The data is **highly imbalanced**:
+* As I have pointed out in the 1st project as well, the data is **highly imbalanced**:
 
 ![Highly imbalanced data](img/Imbalanced_data_plot.png?raw=true "Highly imbalanced data")
 
-Class imbalance is a very common issue in classification problems in machine learning. Imbalanced data negatively impact the model's accuracy because it is easy for the model to be very accurate just by predicting the majority class, while the accuracy for the minority class can fail miserably.
+Although AutoML normally takes into account this imbalance automatically, there is definitely more room to improve the model's accuracy in predicting the minority class. For example, we could use Random Under-Sampling of majority class, or Random Over-Sampling of minority class, or even try different algorithms.
 
-There are many ways to deal with imbalanced data. These include using: 
-1. A different metric; for example, AUC_weighted which is more fit for imbalanced data
-2. A different algorithm
-3. Random Under-Sampling of majority class 
-4. Random Over-Sampling of minority class
-5. The [imbalanced-learn package](https://imbalanced-learn.readthedocs.io/en/stable/)
-
-There are many other methods as well, but I will not get into much details here as it is out of scope. 
-
-Concluding, the high data imbalance is something that can be handled in a future execution, leading to an obvious improvement of the model.
-
-* Another factor that I would improve is **n_cross_validations**. As cross-validation is the process of taking many subsets of the full training data and training a model on each subset, the higher the number of cross validations is, the higher the accuracy achieved is. However, a high number also raises computation time (a.k.a. training time) thus costs, so there must be a balance between the two factors.
+* Another factor that could be improved is **n_cross_validations**. As cross-validation is the process of taking many subsets of the full training data and training a model on each subset, the higher the number of cross validations is, the higher the accuracy achieved is. However, a high number also raises computation time (a.k.a. training time) thus costs, so there must be a balance between the two factors.
 
     _Note_: In case I would be able to improve ```n_cross_validations```, I would also have to increase ```experiment_timeout_minutes``` as the current setting of 15 minutes would not be enough. 
+
+
+* Lastly, a thing that we should be aware of is any future change(s) in the dataset that could impact the accuracy of the model. I do not have any experience on how this could be done in an automated way, but I am sure such a method exists and can be spotted when the need arises.
 
 ***
 ## Standout Suggestions
