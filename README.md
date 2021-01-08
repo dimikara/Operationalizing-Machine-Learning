@@ -6,7 +6,7 @@
    * [Key Steps](#Key-Steps)
    * [Screenshots](#Screenshots)
    * [Screen Recording](#Screen-Recording)
-   * [Future improvements](#Future-improvements-and-suggestions)
+   * [Comments and future improvements](#Comments-and-future-improvements)
    * [Dataset Citation](#Dataset-Citation)
    * [References](#References)
 
@@ -22,15 +22,14 @@ The dataset used can be obtained from [here](https://automlsamplenotebookdata.bl
 ***
 ## Architectural Diagram
 
-The diagram below is a visualization of the flow of operations from start to finish:
+The architectural diagram is not very detailed by nature; its purpose is to give a rough overview of the operations. The diagram below is a visualization of the flow of operations from start to finish:
 
 ![Architectural Diagram](img/Architectural_diagram.png?raw=true "Architectural Diagram") 
-
+  
 
 ***
 ## Key Steps
 
-*TODO*: Write a short discription of the key steps. Remeber to include all the screenshots required to demonstrate key steps. 
 
 The key steps of the project are described below:
 
@@ -64,30 +63,169 @@ The documentation includes: 1. the [screencast](YouTube-link) that shows the ent
 
 **Step 2: Automated ML Experiment**
 
+_Required screenshots:_
+
 ![Step 2 required screenshots](img/Step2-required_screenshots.JPG?raw=true "Step 2 required screenshots")
+
+_Taken screenshots:_
+
+**1) Registered Datasets**
+
+![Registered Datasets](img/01.JPG?raw=true "Registered Datasets")
+
+![Registered Datasets](img/02.JPG?raw=true "Registered Datasets")
+
+**2) Experiment is completed**
+
+![Experiment is completed](img/03.JPG?raw=true "Experiment is completed")
+
+![Experiment is completed](img/06.JPG?raw=true "Experiment is completed")
+
+![Experiment is completed](img/07.JPG?raw=true "Experiment is completed")
+
+![Experiment is completed](img/14.JPG?raw=true "Experiment is completed")
+
+**3) Best model**
+
+![Best model](img/08.JPG?raw=true "Best model")
+
+![Best model](img/09.JPG?raw=true "Best model")
+
+![Best model deployment](img/10.JPG?raw=true "Best model deployment - Start")
+
+![Best model deployment](img/11.JPG?raw=true "Best model deployment - Success")
+
+![Best model deployment](img/12.JPG?raw=true "Best model deployment - Logs")
+
+![Best model - Consume tab](img/13.JPG?raw=true "Best model - Consume tab")
 
 **Step 4: Enable Application Insights**
 
+_Required screenshots:_
+
 ![Step 4 required screenshots](img/Step4-required_screenshots.JPG?raw=true "Step 4 required screenshots")
+
+_Taken screenshots:_
+
+**1) "Application Insights" enabled in the Details tab of the endpoint**
+
+!["Application Insights" enabled](img/17.JPG?raw=true "'Application Insights' enabled")
+
+Screenshots of the tab running "Application Insights," taken at different times:
+
+!["Application Insights" graphs](img/38.JPG?raw=true "'Application Insights' graphs")
+
+!["Application Insights" graphs](img/40.JPG?raw=true "'Application Insights' graphs")
+
+We can see Failed requests, Server response time, Server requests & Availability graphs in real time.
+
+
+**2) Running logs.py script**
+
+![Running logs.py script](img/15.JPG?raw=true "Running logs.py script")
+
+![Running logs.py script](img/16.JPG?raw=true "Running logs.py script")
+
 
 **Step 5: Swagger Documentation**
 
+_Required screenshots:_
+
 ![Step 5 required screenshots](img/Step5-required_screenshots.JPG?raw=true "Step 5 required screenshots")
+
+_Taken screenshots:_
+
+**1) Swagger runs on localhost - GET & POST/score endpoints**
+
+![Swagger runs on localhost](img/28.JPG?raw=true "Swagger runs on localhost")
+
+![Swagger runs on localhost - GET endpoint](img/29.JPG?raw=true "Swagger runs on localhost - GET endpoint")
+
+![Swagger runs on localhost - POST/score endpoint](img/30.JPG?raw=true "Swagger runs on localhost - POST/score endpoint")
+
+![Swagger runs on localhost - POST/score endpoint (cont.)](img/31.JPG?raw=true "Swagger runs on localhost - POST/score endpoint (cont.)")
+
 
 **Step 6: Consume Model Endpoints**
 
+_Required screenshots:_
+
 ![Step 6 required screenshots](img/Step6-required_screenshots.JPG?raw=true "Step 6 required screenshots")
+
+_Taken screenshots:_
+
+**1) Consume Model Endpoints: endpoint.py runs**
+
+![endpoint.py runs](img/46.JPG?raw=true "endpoint.py runs")
+
+Endpoints
+
+![Real-time endpoints](img/43.JPG?raw=true "Real-time endpoints")
+
+![Pipeline endpoints](img/42.JPG?raw=true "Pipeline endpoints")
 
 **Step 7: Create, Publish and Consume a Pipeline**
 
+_Required screenshots:_
+
 ![Step 7 required screenshots](img/Step7-required_screenshots.JPG?raw=true "Step 7 required screenshots")
 
+_Taken screenshots:_
 
+**1+2) The Pipelines section of Azure ML Studio**
+
+![Pipeline has been created](img/20.JPG?raw=true "Pipeline has been created")
+
+![Pipeline Endpoint](img/21.JPG?raw=true "Pipeline Endpoint")
+
+**3) Bankmarketing dataset with the AutoML module** 
+
+![Bankmarketing dataset with the AutoML module](img/22.JPG?raw=true "Bankmarketing dataset with the AutoML module")
+
+![Bankmarketing dataset with the AutoML module](img/23.JPG?raw=true "Bankmarketing dataset with the AutoML module")
+
+**4) Published Pipeline Overview showing a REST endpoint and an ACTIVE status** 
+
+![Published Pipeline Overview showing a REST endpoint and an ACTIVE status](img/24.JPG?raw=true "Published Pipeline Overview showing a REST endpoint and an ACTIVE status")
+
+**5) Jupyter Notebook: RunDetails Widget shows the step runs** 
+
+![Jupyter Notebook: RunDetails Widget shows the step runs](img/41.JPG?raw=true "Jupyter Notebook: RunDetails Widget shows the step runs")
+
+**6) In ML Studio: Completed run** 
+
+![In ML Studio](img/26.JPG?raw=true "In ML Studio")
+
+![In ML Studio](img/27.JPG?raw=true "In ML Studio")
+
+![In ML Studio](img/32.JPG?raw=true "In ML Studio")
+
+**Extra Screenshots**
+
+Although not explicitly asked, I am adding these here as a reference.
+
+_Best model screenshots:_
+
+![Best model](img/33.JPG?raw=true "Best model")
+
+![Best model](img/34.JPG?raw=true "Best model")
+
+![Best model](img/35.JPG?raw=true "Best model")
+
+![Best model](img/36.JPG?raw=true "Best model")
+
+![Best model](img/37.JPG?raw=true "Best model")
+
+_"Data guardrails" tab screenshots:_
+
+!['Data guardrails' tab](img/44.JPG?raw=true "'Data guardrails' tab")
+
+!['Data guardrails' tab](img/45.JPG?raw=true "'Data guardrails' tab")
 
 ***
 ## Screen Recording
 
-The screen recording can be found [here](YouTube-link) and it shows the project in action. More specifically, the screencast demonstrates:
+The screen recording can be found [here](https://youtu.be/1GqvMAXA6Ro) and it shows the project in action. More specifically, the screencast demonstrates:
 
 * The working deployed ML model endpoint
 * The deployed Pipeline
@@ -96,13 +234,16 @@ The screen recording can be found [here](YouTube-link) and it shows the project 
 
 
 ***
-## Future improvements and suggestions
+## Comments and future improvements
 
 * As I have pointed out in the 1st project as well, the data is **highly imbalanced**:
 
 ![Highly imbalanced data](img/Imbalanced_data_plot.png?raw=true "Highly imbalanced data")
 
 Although AutoML normally takes into account this imbalance automatically, there should be more room to improve the model's accuracy in predicting the minority class. For example, we could use Random Under-Sampling of majority class, or Random Over-Sampling of minority class, or even try different algorithms.
+
+A side note here: out of curiosity, I clicked the 'Data guardrails' tab (see screenshots above) and found many interesting observations done by Azure analysis. Unfortunately, I ran out of time and was not able to look into this with more detail. My remark here is that even though I can understand that there must be time contraints in our runs, this can impede our in depth learning because we miss the chance to browse around looking for the many extra but less important things; this is really a shame. As a suggestion, it would be interesting to create a virtual environment with everything running in simulation -thus running with no actual cost- where the learner could freely look around.
+
 
 * Another factor that could improve the model is increasing the training time. This suggestion might be seen as a no-brainer, but it would also increase costs and there must always be a balance between minimum required accuracy and assigned budget.
 
