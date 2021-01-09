@@ -183,7 +183,7 @@ We can see below the HTTP API methods and responses for the model:
 
 **Step 6: Consume Model Endpoints**
 
-Once the best model is deployed, I consume its endpoint using the `endpoint.py` script provided where I replace the values of `scoring_uri` and `key` to match the corresponding values that appear in the _Consume_ tab of the _Endpoint_: 
+Once the best model is deployed, I consume its endpoint using the `endpoint.py` script provided where I replace the values of `scoring_uri` and `key` to match the corresponding values that appear in the _Consume_ tab of the endpoint: 
 
 **Consume Model Endpoints: running endpoint.py**
 
