@@ -73,23 +73,36 @@ _Taken screenshots:_
 
 ![Registered Datasets](img/01.JPG?raw=true "Registered Datasets")
 
-![Registered Datasets](img/02.JPG?raw=true "Registered Datasets")
+![Registered Datasets](img/47.JPG?raw=true "Registered Datasets")
+
+Creating a new Automated ML run 
+
+![Experiment is completed](img/02.JPG?raw=true "Experiment is completed")
 
 **2) Experiment is completed**
 
+![AutoML completed](img/AutoML_Completed.JPG?raw=true "AutoML completed")
+
 ![Experiment is completed](img/03.JPG?raw=true "Experiment is completed")
 
-![Experiment is completed](img/06.JPG?raw=true "Experiment is completed")
+Data guardrails
 
-![Experiment is completed](img/07.JPG?raw=true "Experiment is completed")
+![Data guardrails](img/04.JPG?raw=true "Data guardrails")
 
-![Experiment is completed](img/14.JPG?raw=true "Experiment is completed")
+![Data guardrails  - additional details](img/05.JPG?raw=true "Data guardrails - additional details")
 
 **3) Best model**
 
-![Best model](img/08.JPG?raw=true "Best model")
+![Best model](img/06.JPG?raw=true "Best model")
 
-![Best model](img/09.JPG?raw=true "Best model")
+![Best model](img/07.JPG?raw=true "Best model")
+
+![Best model graphs](img/08.JPG?raw=true "Best model graphs")
+
+![Best model metrics](img/Best_model2_metrics.JPG?raw=true "Best model metrics")
+
+Best model deployment
+
 
 ![Best model deployment](img/10.JPG?raw=true "Best model deployment - Start")
 
@@ -109,22 +122,18 @@ _Taken screenshots:_
 
 **1) "Application Insights" enabled in the Details tab of the endpoint**
 
-!["Application Insights" enabled](img/17.JPG?raw=true "'Application Insights' enabled")
+!["Application Insights" enabled](img/Best_model2_Application_Insights_enabled.JPG?raw=true "'Application Insights' enabled")
 
-Screenshots of the tab running "Application Insights," taken at different times:
+Screenshot of the tab running "Application Insights":
 
-!["Application Insights" graphs](img/38.JPG?raw=true "'Application Insights' graphs")
-
-!["Application Insights" graphs](img/40.JPG?raw=true "'Application Insights' graphs")
+!["Application Insights" graphs](img/Best_model2_Application_Insights_tab.JPG?raw=true "'Application Insights' graphs")
 
 We can see Failed requests, Server response time, Server requests & Availability graphs in real time.
 
 
 **2) Running logs.py script**
 
-![Running logs.py script](img/15.JPG?raw=true "Running logs.py script")
-
-![Running logs.py script](img/16.JPG?raw=true "Running logs.py script")
+![Running logs.py script](img/Best_model2-logs_py_running.JPG?raw=true "Running logs.py script")
 
 
 **Step 5: Swagger Documentation**
@@ -137,13 +146,17 @@ _Taken screenshots:_
 
 **1) Swagger runs on localhost - GET & POST/score endpoints**
 
-![Swagger runs on localhost](img/28.JPG?raw=true "Swagger runs on localhost")
+![swagger.sh run](img/best_model2-Swagger1B.JPG?raw=true "swagger.sh run")
 
-![Swagger runs on localhost - GET endpoint](img/29.JPG?raw=true "Swagger runs on localhost - GET endpoint")
+![swagger.sh run](img/best_model2-Swagger1A.JPG?raw=true "swagger.sh run")
 
-![Swagger runs on localhost - POST/score endpoint](img/30.JPG?raw=true "Swagger runs on localhost - POST/score endpoint")
+![Swagger runs on localhost](img/61.JPG?raw=true "Swagger runs on localhost")
 
-![Swagger runs on localhost - POST/score endpoint (cont.)](img/31.JPG?raw=true "Swagger runs on localhost - POST/score endpoint (cont.)")
+![Swagger runs on localhost](img/best_model2-Swagger1.JPG?raw=true "Swagger runs on localhost")
+
+![Swagger runs on localhost - GET endpoint](img/best_model2-Swagger2.JPG?raw=true "Swagger runs on localhost - GET endpoint")
+
+![Swagger runs on localhost - POST/score endpoint](img/best_model2-Swagger3.JPG?raw=true "Swagger runs on localhost - POST/score endpoint")
 
 
 **Step 6: Consume Model Endpoints**
@@ -156,13 +169,9 @@ _Taken screenshots:_
 
 **1) Consume Model Endpoints: endpoint.py runs**
 
-![endpoint.py runs](img/46.JPG?raw=true "endpoint.py runs")
+![endpoint.py](img/best_model2_enpoint_py.JPG?raw=true "endpoint.py")
 
-Endpoints
-
-![Real-time endpoints](img/43.JPG?raw=true "Real-time endpoints")
-
-![Pipeline endpoints](img/42.JPG?raw=true "Pipeline endpoints")
+![endpoint.py runs](img/best_model2_enpoint_py_run.JPG?raw=true "endpoint.py runs")
 
 **Step 7: Create, Publish and Consume a Pipeline**
 
@@ -174,31 +183,33 @@ _Taken screenshots:_
 
 **1+2) The Pipelines section of Azure ML Studio**
 
-![Pipeline has been created](img/20.JPG?raw=true "Pipeline has been created")
+![Pipeline has been created](img/Pipeline_has_been_created.JPG?raw=true "Pipeline has been created")
 
-![Pipeline Endpoint](img/21.JPG?raw=true "Pipeline Endpoint")
+![Pipeline Endpoint](img/Pipeline_Endpoint.JPG?raw=true "Pipeline Endpoint")
 
 **3) Bankmarketing dataset with the AutoML module** 
 
-![Bankmarketing dataset with the AutoML module](img/22.JPG?raw=true "Bankmarketing dataset with the AutoML module")
-
-![Bankmarketing dataset with the AutoML module](img/23.JPG?raw=true "Bankmarketing dataset with the AutoML module")
+![Bankmarketing dataset with the AutoML module](img/Bankmarketing_Dataset+AutoML_module.JPG?raw=true "Bankmarketing dataset with the AutoML module")
 
 **4) Published Pipeline Overview showing a REST endpoint and an ACTIVE status** 
 
-![Published Pipeline Overview showing a REST endpoint and an ACTIVE status](img/24.JPG?raw=true "Published Pipeline Overview showing a REST endpoint and an ACTIVE status")
+![Published Pipeline Overview showing a REST endpoint and an ACTIVE status](img/41.JPG?raw=true "Published Pipeline Overview showing a REST endpoint and an ACTIVE status")
+
+![Published Pipeline Overview showing a REST endpoint and an ACTIVE status](img/42.JPG?raw=true "Published Pipeline Overview showing a REST endpoint and an ACTIVE status")
 
 **5) Jupyter Notebook: RunDetails Widget shows the step runs** 
 
-![Jupyter Notebook: RunDetails Widget shows the step runs](img/41.JPG?raw=true "Jupyter Notebook: RunDetails Widget shows the step runs")
+![Jupyter Notebook: RunDetails Widget shows the step runs](img/RunDetailsWidget1.JPG?raw=true "Jupyter Notebook: RunDetails Widget shows the step runs")
+
+![Jupyter Notebook: RunDetails Widget shows the step runs](img/RunDetailsWidget2.JPG?raw=true "Jupyter Notebook: RunDetails Widget shows the step runs")
 
 **6) In ML Studio: Completed run** 
 
-![In ML Studio](img/26.JPG?raw=true "In ML Studio")
+![In ML Studio](img/40.JPG?raw=true "In ML Studio")
 
-![In ML Studio](img/27.JPG?raw=true "In ML Studio")
+![In ML Studio](img/50.JPG?raw=true "In ML Studio")
 
-![In ML Studio](img/32.JPG?raw=true "In ML Studio")
+![In ML Studio](img/51.JPG?raw=true "In ML Studio")
 
 **Extra Screenshots**
 
@@ -225,7 +236,7 @@ _"Data guardrails" tab screenshots:_
 ***
 ## Screen Recording
 
-The screen recording can be found [here](https://youtu.be/1GqvMAXA6Ro) and it shows the project in action. More specifically, the screencast demonstrates:
+The screen recording can be found [here]() and it shows the project in action. More specifically, the screencast demonstrates:
 
 * The working deployed ML model endpoint
 * The deployed Pipeline
@@ -244,7 +255,6 @@ Although AutoML normally takes into account this imbalance automatically, there 
 
 A side note here: out of curiosity, I clicked the 'Data guardrails' tab (see screenshots above) and found many interesting observations done by Azure analysis. Unfortunately, I ran out of time and was not able to look into this with more detail. My remark here is that even though I can understand that there must be time contraints in our runs, this can impede our in depth learning because we miss the chance to browse around looking for the many extra but less important things; this is really a shame. As a suggestion, it would be interesting to create a virtual environment with everything running in simulation -thus running with no actual cost- where the learner could freely look around.
 
-
 * Another factor that could improve the model is increasing the training time. This suggestion might be seen as a no-brainer, but it would also increase costs and there must always be a balance between minimum required accuracy and assigned budget.
 
 * I could not help but wonder how more accurate would be the resulting model in case Deep Learning was used, as we were specifically instructed _NOT_ to enable it in the AutoML settings. While searching for more info, I found this very interesting article in Microsoft Docs: [Deep learning vs. machine learning in Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/concept-deep-learning-vs-machine-learning). There is says that deep learning excels at identifying patterns in unstructured data such as images, sound, video, and text. In my understanding, it might be an overkill to use it in a classification problem like this.
@@ -262,8 +272,8 @@ A side note here: out of curiosity, I clicked the 'Data guardrails' tab (see scr
 - Udacity Nanodegree material
 - [App](https://app.diagrams.net/) used for the creation of the Architectural Diagram
 - [Prevent overfitting and imbalanced data with automated machine learning](https://docs.microsoft.com/en-us/azure/machine-learning/concept-manage-ml-pitfalls)
-- [Dealing with Imbalanced Data in AutoML](https://www.drware.com/dealing-with-imbalanced-data-in-automl/)
-- [Dealing with Imbalanced Data in AutoML](https://techcommunity.microsoft.com/t5/azure-ai/dealing-with-imbalanced-data-in-automl/ba-p/1625043)
+- [Dr. Ware: Dealing with Imbalanced Data in AutoML](https://www.drware.com/dealing-with-imbalanced-data-in-automl/)
+- [Microsoft Tech Community: Dealing with Imbalanced Data in AutoML](https://techcommunity.microsoft.com/t5/azure-ai/dealing-with-imbalanced-data-in-automl/ba-p/1625043)
 - A very interesting paper on the imbalanced classes issue: [Analysis of Imbalance Strategies Recommendation using a
 Meta-Learning Approach](https://www.automl.org/wp-content/uploads/2020/07/AutoML_2020_paper_34.pdf)
 - [Imbalanced Data : How to handle Imbalanced Classification Problems](https://www.analyticsvidhya.com/blog/2017/03/imbalanced-data-classification/)
