@@ -63,12 +63,6 @@ The documentation includes: 1. the [screencast](YouTube-link) that shows the ent
 
 **Step 2: Automated ML Experiment**
 
-_Required screenshots:_
-
-![Step 2 required screenshots](img/Step2-required_screenshots.JPG?raw=true "Step 2 required screenshots")
-
-_Taken screenshots:_
-
 **1) Registered Datasets**
 
 ![Registered Datasets](img/01.JPG?raw=true "Registered Datasets")
@@ -85,12 +79,6 @@ Creating a new Automated ML run
 
 ![Experiment is completed](img/03.JPG?raw=true "Experiment is completed")
 
-Data guardrails
-
-![Data guardrails](img/04.JPG?raw=true "Data guardrails")
-
-![Data guardrails  - additional details](img/05.JPG?raw=true "Data guardrails - additional details")
-
 **3) Best model**
 
 ![Best model](img/06.JPG?raw=true "Best model")
@@ -101,24 +89,14 @@ Data guardrails
 
 ![Best model metrics](img/Best_model2_metrics.JPG?raw=true "Best model metrics")
 
-Best model deployment
+Data guardrails
 
+![Data guardrails](img/04.JPG?raw=true "Data guardrails")
 
-![Best model deployment](img/10.JPG?raw=true "Best model deployment - Start")
+![Data guardrails  - additional details](img/05.JPG?raw=true "Data guardrails - additional details")
 
-![Best model deployment](img/11.JPG?raw=true "Best model deployment - Success")
-
-![Best model deployment](img/12.JPG?raw=true "Best model deployment - Logs")
-
-![Best model - Consume tab](img/13.JPG?raw=true "Best model - Consume tab")
 
 **Step 4: Enable Application Insights**
-
-_Required screenshots:_
-
-![Step 4 required screenshots](img/Step4-required_screenshots.JPG?raw=true "Step 4 required screenshots")
-
-_Taken screenshots:_
 
 **1) "Application Insights" enabled in the Details tab of the endpoint**
 
@@ -138,17 +116,15 @@ We can see Failed requests, Server response time, Server requests & Availability
 
 **Step 5: Swagger Documentation**
 
-_Required screenshots:_
-
-![Step 5 required screenshots](img/Step5-required_screenshots.JPG?raw=true "Step 5 required screenshots")
-
-_Taken screenshots:_
-
 **1) Swagger runs on localhost - GET & POST/score endpoints**
 
 ![swagger.sh run](img/best_model2-Swagger1B.JPG?raw=true "swagger.sh run")
 
 ![swagger.sh run](img/best_model2-Swagger1A.JPG?raw=true "swagger.sh run")
+
+![Swagger UI](img/16.JPG?raw=true "Swagger UI")
+
+![Swagger UI](img/17.JPG?raw=true "Swagger UI")
 
 ![Swagger runs on localhost](img/61.JPG?raw=true "Swagger runs on localhost")
 
@@ -161,12 +137,6 @@ _Taken screenshots:_
 
 **Step 6: Consume Model Endpoints**
 
-_Required screenshots:_
-
-![Step 6 required screenshots](img/Step6-required_screenshots.JPG?raw=true "Step 6 required screenshots")
-
-_Taken screenshots:_
-
 **1) Consume Model Endpoints: endpoint.py runs**
 
 ![endpoint.py](img/best_model2_enpoint_py.JPG?raw=true "endpoint.py")
@@ -174,12 +144,6 @@ _Taken screenshots:_
 ![endpoint.py runs](img/best_model2_enpoint_py_run.JPG?raw=true "endpoint.py runs")
 
 **Step 7: Create, Publish and Consume a Pipeline**
-
-_Required screenshots:_
-
-![Step 7 required screenshots](img/Step7-required_screenshots.JPG?raw=true "Step 7 required screenshots")
-
-_Taken screenshots:_
 
 **1+2) The Pipelines section of Azure ML Studio**
 
@@ -210,28 +174,6 @@ _Taken screenshots:_
 ![In ML Studio](img/50.JPG?raw=true "In ML Studio")
 
 ![In ML Studio](img/51.JPG?raw=true "In ML Studio")
-
-**Extra Screenshots**
-
-Although not explicitly asked, I am adding these here as a reference.
-
-_Best model screenshots:_
-
-![Best model](img/33.JPG?raw=true "Best model")
-
-![Best model](img/34.JPG?raw=true "Best model")
-
-![Best model](img/35.JPG?raw=true "Best model")
-
-![Best model](img/36.JPG?raw=true "Best model")
-
-![Best model](img/37.JPG?raw=true "Best model")
-
-_"Data guardrails" tab screenshots:_
-
-!['Data guardrails' tab](img/44.JPG?raw=true "'Data guardrails' tab")
-
-!['Data guardrails' tab](img/45.JPG?raw=true "'Data guardrails' tab")
 
 ***
 ## Screen Recording
