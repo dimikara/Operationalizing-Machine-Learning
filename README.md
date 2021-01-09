@@ -63,42 +63,72 @@ The documentation includes: 1. the [screencast](https://youtu.be/tuWl0RYHsQI) th
 
 **Step 2: Automated ML Experiment**
 
-**1) Registered Datasets**
+As I explained above, I start with the step 2 because I am using the virtual lab environment that is provided by Udacity.
 
-![Registered Datasets](img/01.JPG?raw=true "Registered Datasets")
+The first thing I check after opening the Azure Machine Learning Studio, is whether the dataset is included in the Registered Datasets, which it is as we can see below.
 
-![Registered Datasets](img/47.JPG?raw=true "Registered Datasets")
+**Registered Datasets:**
 
-Creating a new Automated ML run 
+![Registered Datasets](img/Registered_Datasets.JPG?raw=true "Registered Datasets")
 
-![Experiment is completed](img/02.JPG?raw=true "Experiment is completed")
+![Bank-marketing Dataset - Explore](img/Bank-marketing_Dataset_Explore.JPG?raw=true "Bank-marketing Dataset - Explore")
 
-**2) Experiment is completed**
+**Creating a new Automated ML run:**
+
+I select the Bank-marketing dataset and in the second screen, I make the following selections:
+
+* Task: _Classification_
+* Primary metric: _Accuracy_
+* _Explain best model_
+* _Exit criterion_: 1 hour in _Job training time (hours)_
+* _Max concurrent iterations_: 5. Please note that the number of concurrent operations **MUST** always be less than the maximum number of nodes configured in the cluster.
+
+![Creating a new Automated ML run](img/Creating_new_AutoML_run.JPG?raw=true "Creating a new Automated ML run")
+
+**Experiment is completed**
+
+The experiment runs for about 20 min. and is completed:
+
+![Experiment is completed](img/Experiment_Completed.JPG?raw=true "Experiment is completed")
 
 ![AutoML completed](img/AutoML_Completed.JPG?raw=true "AutoML completed")
 
-![Experiment is completed](img/03.JPG?raw=true "Experiment is completed")
+![AutoML completed](img/35.JPG?raw=true "AutoML completed")
 
-**3) Best model**
+**Best model**
 
-![Best model](img/06.JPG?raw=true "Best model")
+After the completion, we can see the resulting models:
 
-![Best model](img/07.JPG?raw=true "Best model")
+![Completed run models](img/Completed_run_models.JPG?raw=true "Completed run models")
 
-![Best model graphs](img/08.JPG?raw=true "Best model graphs")
+In the _Models_ tab, the first model (at the top) is the best model.
+You can see it below along with some of its characteristics & metrics:
+
+![Best model](img/Best_model.JPG?raw=true "Best model")
+
+![Best model graphs](img/Best_model_graphs.JPG?raw=true "Best model graphs")
 
 ![Best model metrics](img/Best_model2_metrics.JPG?raw=true "Best model metrics")
 
-Data guardrails
+By clicking the _Data guardrails_ tab, we can also see some very interesting info about potential issues with data. In this case, the imbalanced data issue was flagged:
 
-![Data guardrails](img/04.JPG?raw=true "Data guardrails")
+![Data guardrails](img/Data_guardrails1.JPG?raw=true "Data guardrails")
 
-![Data guardrails  - additional details](img/05.JPG?raw=true "Data guardrails - additional details")
+![Data guardrails  - additional details](img/Data_guardrails2.JPG?raw=true "Data guardrails - additional details")
+
+**Step 3: Deploy the Best Model**
+
+The next step in the procedure is the deployment of the best model.
+First, I choose the best model i.e. the first model at the top in the _Models_ tab. I deploy the model with _Authentication_ enabled and using the _Azure Container Instance_ (ACI).
+
+Deploying the best model will allow us to interact with the HTTP API service and interact with the model by sending data over POST requests.
 
 
 **Step 4: Enable Application Insights**
 
-**1) "Application Insights" enabled in the Details tab of the endpoint**
+After the deployment of the best model, I can enable _Application Insights_ and be able to retrieve logs:
+
+**"Application Insights" enabled in the Details tab of the endpoint**
 
 !["Application Insights" enabled](img/Best_model2_Application_Insights_enabled.JPG?raw=true "'Application Insights' enabled")
 
@@ -106,27 +136,43 @@ Screenshot of the tab running "Application Insights":
 
 !["Application Insights" graphs](img/Best_model2_Application_Insights_tab.JPG?raw=true "'Application Insights' graphs")
 
-We can see Failed requests, Server response time, Server requests & Availability graphs in real time.
+We can see _Failed requests_, _Server response time_, _Server requests_ & _Availability_ graphs in real time.
 
 
-**2) Running logs.py script**
+**Running logs.py script**
+
+Although we can enable _Application Insights_ at deploy time with a check-box, it is useful to be able to run code that will enable it for us. For this reason, I run the _logs.py_ Python file, where I put in _name_ the name of the deployed model (_best-model2_) and I add the line `service.update(enable_app_insights=True)`: 
 
 ![Running logs.py script](img/Best_model2-logs_py_running.JPG?raw=true "Running logs.py script")
 
 
 **Step 5: Swagger Documentation**
 
-**1) Swagger runs on localhost - GET & POST/score endpoints**
+**Swagger** is a set of open-source tools built around the OpenAPI Specification that can help us design, build, document and consume REST APIs. One of the major tools of Swagger is **Swagger UI**, which is used to generate interactive API documentation that lets the users try out the API calls directly in the browser.
+
+In this step, I consume the deployed model using Swagger. Azure provides a _Swagger JSON file_ for deployed models. This file can be found in the _Endpoints_ section, in the deployed model there, which should be the first one on the list. I download this file and save it in the _Swagger_ folder.
+
+I execute the files _swagger.sh_ and _serve.py_. What these two files do essentially is to download and run the latest Swagger container (_swagger.sh_), and start a Python server on port 9000 (_serve.py_).
 
 ![swagger.sh run](img/best_model2-Swagger1B.JPG?raw=true "swagger.sh run")
 
 ![swagger.sh run](img/best_model2-Swagger1A.JPG?raw=true "swagger.sh run")
 
-![Swagger UI](img/16.JPG?raw=true "Swagger UI")
+In the Live Demo page of Swagger UI:
 
-![Swagger UI](img/17.JPG?raw=true "Swagger UI")
+![Swagger UI](img/Swagger_LiveDemo1.JPG?raw=true "Swagger UI")
+
+I click on Live Demo button and am transfered in a demo page with a sample server:
+
+![Swagger UI](img/Swagger_LiveDemo2.JPG?raw=true "Swagger UI Live Demo")
+
+I delete the address in the address bar pointed with the red arrow and replace it with: `http://localhost:9000/swagger.json`. After hitting _Explore_, Swagger UI generates interactive API documentation that lets us try out the API calls directly in the browser. 
 
 ![Swagger runs on localhost](img/61.JPG?raw=true "Swagger runs on localhost")
+
+We can see below the HTTP API methods and responses for the model:
+
+**Swagger runs on localhost - GET & POST/score endpoints**
 
 ![Swagger runs on localhost](img/best_model2-Swagger1.JPG?raw=true "Swagger runs on localhost")
 
@@ -137,37 +183,44 @@ We can see Failed requests, Server response time, Server requests & Availability
 
 **Step 6: Consume Model Endpoints**
 
-**1) Consume Model Endpoints: endpoint.py runs**
+Once the best model is deployed, I consume its endpoint using the `endpoint.py` script provided where I replace the values of `scoring_uri` and `key` to match the corresponding values that appear in the _Consume_ tab of the _Endpoint_: 
+
+**Consume Model Endpoints: running endpoint.py**
 
 ![endpoint.py](img/best_model2_enpoint_py.JPG?raw=true "endpoint.py")
 
-![endpoint.py runs](img/best_model2_enpoint_py_run.JPG?raw=true "endpoint.py runs")
+![run endpoint.py](img/best_model2_enpoint_py_run.JPG?raw=true "run endpoint.py")
+
 
 **Step 7: Create, Publish and Consume a Pipeline**
 
-**1+2) The Pipelines section of Azure ML Studio**
+In this second part of the project, I use the Jupyter Notebook provided: `aml-pipelines-with-automated-machine-learning-step.ipynb`. The notebook is updated so as to have the same dataset, keys, URI, cluster, and model names that I created in the first part. 
+
+The purpose of this step is to create, publish and consume a pipeline using the Azure Python SDK. We can see below the relevant screenshots: 
+
+**The Pipelines section of Azure ML Studio**
 
 ![Pipeline has been created](img/Pipeline_has_been_created.JPG?raw=true "Pipeline has been created")
 
 ![Pipeline Endpoint](img/Pipeline_Endpoint.JPG?raw=true "Pipeline Endpoint")
 
-**3) Bankmarketing dataset with the AutoML module** 
+**Bankmarketing dataset with the AutoML module** 
 
 ![Bankmarketing dataset with the AutoML module](img/Bankmarketing_Dataset+AutoML_module.JPG?raw=true "Bankmarketing dataset with the AutoML module")
 
-**4) Published Pipeline Overview showing a REST endpoint and an ACTIVE status** 
+**Published Pipeline Overview showing a REST endpoint and an ACTIVE status** 
 
 ![Published Pipeline Overview showing a REST endpoint and an ACTIVE status](img/41.JPG?raw=true "Published Pipeline Overview showing a REST endpoint and an ACTIVE status")
 
 ![Published Pipeline Overview showing a REST endpoint and an ACTIVE status](img/42.JPG?raw=true "Published Pipeline Overview showing a REST endpoint and an ACTIVE status")
 
-**5) Jupyter Notebook: RunDetails Widget shows the step runs** 
+**Jupyter Notebook: RunDetails Widget shows the step runs** 
 
 ![Jupyter Notebook: RunDetails Widget shows the step runs](img/RunDetailsWidget1.JPG?raw=true "Jupyter Notebook: RunDetails Widget shows the step runs")
 
 ![Jupyter Notebook: RunDetails Widget shows the step runs](img/RunDetailsWidget2.JPG?raw=true "Jupyter Notebook: RunDetails Widget shows the step runs")
 
-**6) In ML Studio: Completed run** 
+**In ML Studio: Completed run** 
 
 ![In ML Studio](img/40.JPG?raw=true "In ML Studio")
 
@@ -195,11 +248,11 @@ The screen recording can be found [here](https://youtu.be/tuWl0RYHsQI) and it sh
 
 Although AutoML normally takes into account this imbalance automatically, there should be more room to improve the model's accuracy in predicting the minority class. For example, we could use Random Under-Sampling of majority class, or Random Over-Sampling of minority class, or even try different algorithms.
 
-A side note here: out of curiosity, I clicked the 'Data guardrails' tab (see screenshots above) and found many interesting observations done by Azure analysis. Unfortunately, I ran out of time and was not able to look into this with more detail. My remark here is that even though I can understand that there must be time contraints in our runs, this can impede our in depth learning because we miss the chance to browse around looking for the many extra but less important things; this is really a shame. As a suggestion, it would be interesting to create a virtual environment with everything running in simulation -thus running with no actual cost- where the learner could freely look around.
+A side note here: out of curiosity, I clicked the 'Data guardrails' tab (see screenshots above, step 3) and found many interesting observations done by Azure analysis. Unfortunately, I ran out of time and was not able to look into this with more detail. My remark here is that even though I can understand that there must be time contraints in our runs, this can impede our in depth learning because we miss the chance to browse around looking for the many extra but less important things; this is really a shame. As a suggestion, it would be interesting to create a virtual environment with everything running in simulation -thus running with no actual cost- where the learner could freely look around.
 
 * Another factor that could improve the model is increasing the training time. This suggestion might be seen as a no-brainer, but it would also increase costs and there must always be a balance between minimum required accuracy and assigned budget.
 
-* I could not help but wonder how more accurate would be the resulting model in case Deep Learning was used, as we were specifically instructed _NOT_ to enable it in the AutoML settings. While searching for more info, I found this very interesting article in Microsoft Docs: [Deep learning vs. machine learning in Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/concept-deep-learning-vs-machine-learning). There is says that deep learning excels at identifying patterns in unstructured data such as images, sound, video, and text. In my understanding, it might be an overkill to use it in a classification problem like this.
+* I could not help but wonder how more accurate would be the resulting model in case `Deep Learning` was used, as we were specifically instructed _NOT_ to enable it in the AutoML settings. While searching for more info, I found this very interesting article in Microsoft Docs: [Deep learning vs. machine learning in Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/concept-deep-learning-vs-machine-learning). There it says that deep learning excels at identifying patterns in unstructured data such as images, sound, video, and text. In my understanding, it might be an overkill to use it in a classification problem like this.
 
 * Lastly, a thing that could be taken into account is any future change(s) in the dataset that could impact the accuracy of the model. I do not have any experience on how this could be done in an automated way, but I am sure that a method exists and can be spotted if/when such a need arises.
 
@@ -221,4 +274,5 @@ Meta-Learning Approach](https://www.automl.org/wp-content/uploads/2020/07/AutoML
 - [Imbalanced Data : How to handle Imbalanced Classification Problems](https://www.analyticsvidhya.com/blog/2017/03/imbalanced-data-classification/)
 - [Consume an Azure Machine Learning model deployed as a web service](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-consume-web-service?tabs=python)
 - [Deep learning vs. machine learning in Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/concept-deep-learning-vs-machine-learning)
-
+- [A Review of Azure Automated Machine Learning (AutoML)](https://medium.com/microsoftazure/a-review-of-azure-automated-machine-learning-automl-5d2f98512406)
+- [Supported data guardrails](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-configure-auto-features#supported-data-guardrails)
