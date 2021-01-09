@@ -55,7 +55,7 @@ Once the model is deployed, I am using the ```endpoint.py``` script to interact 
 In this part of the project, I am using the Jupyter Notebook with the same keys, URI, dataset, cluster, and model names already created.
 
 - **Documentation:**
-The documentation includes: 1. the [screencast](YouTube-link) that shows the entire process of the working ML application; and 2. this README file that describes the project and documents the main steps.
+The documentation includes: 1. the [screencast](https://youtu.be/tuWl0RYHsQI) that shows the entire process of the working ML application; and 2. this README file that describes the project and documents the main steps.
 
 ***
 
@@ -178,7 +178,7 @@ We can see Failed requests, Server response time, Server requests & Availability
 ***
 ## Screen Recording
 
-The screen recording can be found [here]() and it shows the project in action. More specifically, the screencast demonstrates:
+The screen recording can be found [here](https://youtu.be/tuWl0RYHsQI) and it shows the project in action. More specifically, the screencast demonstrates:
 
 * The working deployed ML model endpoint
 * The deployed Pipeline
