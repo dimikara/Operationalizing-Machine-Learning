@@ -64,7 +64,7 @@ The documentation includes: 1. the [screencast](https://youtu.be/0AKGw1YOcXw) th
 
 ## Screenshots
 
-**Step 2: Automated ML Experiment**
+### **Step 2: Automated ML Experiment**
 
 As I explained above, I start with the step 2 because I am using the virtual lab environment that is provided by Udacity.
 
@@ -119,7 +119,7 @@ By clicking the _Data guardrails_ tab, we can also see some very interesting inf
 
 ![Data guardrails  - additional details](img/Data_guardrails2.JPG?raw=true "Data guardrails - additional details")
 
-**Step 3: Deploy the Best Model**
+### **Step 3: Deploy the Best Model**
 
 The next step in the procedure is the deployment of the best model.
 First, I choose the best model i.e. the first model at the top in the _Models_ tab. I deploy the model with _Authentication_ enabled and using the _Azure Container Instance_ (ACI).
@@ -127,7 +127,7 @@ First, I choose the best model i.e. the first model at the top in the _Models_ t
 Deploying the best model will allow us to interact with the HTTP API service and interact with the model by sending data over POST requests.
 
 
-**Step 4: Enable Application Insights**
+### **Step 4: Enable Application Insights**
 
 After the deployment of the best model, I can enable _Application Insights_ and be able to retrieve logs:
 
@@ -149,7 +149,7 @@ Although we can enable _Application Insights_ at deploy time with a check-box, i
 ![Running logs.py script](img/Best_model2-logs_py_running.JPG?raw=true "Running logs.py script")
 
 
-**Step 5: Swagger Documentation**
+### **Step 5: Swagger Documentation**
 
 **Swagger** is a set of open-source tools built around the OpenAPI Specification that can help us design, build, document and consume REST APIs. One of the major tools of Swagger is **Swagger UI**, which is used to generate interactive API documentation that lets the users try out the API calls directly in the browser.
 
@@ -184,7 +184,7 @@ We can see below the HTTP API methods and responses for the model:
 ![Swagger runs on localhost - POST/score endpoint](img/best_model2-Swagger3.JPG?raw=true "Swagger runs on localhost - POST/score endpoint")
 
 
-**Step 6: Consume Model Endpoints**
+### **Step 6: Consume Model Endpoints**
 
 Once the best model is deployed, I consume its endpoint using the `endpoint.py` script provided where I replace the values of `scoring_uri` and `key` to match the corresponding values that appear in the _Consume_ tab of the endpoint: 
 
@@ -195,7 +195,7 @@ Once the best model is deployed, I consume its endpoint using the `endpoint.py` 
 ![run endpoint.py](img/best_model2_enpoint_py_run.JPG?raw=true "run endpoint.py")
 
 
-**Step 7: Create, Publish and Consume a Pipeline**
+### **Step 7: Create, Publish and Consume a Pipeline**
 
 In this second part of the project, I use the Jupyter Notebook provided: `aml-pipelines-with-automated-machine-learning-step.ipynb`. The notebook is updated so as to have the same dataset, keys, URI, cluster, and model names that I created in the first part. 
 
