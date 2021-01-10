@@ -15,9 +15,12 @@
 
 ## Overview
 
-In this project, I used Azure Machine Learning to configure a cloud-based machine learning production model, deploy it, and consume it. After that, I created, published, and consumed a pipeline. The whole procedure is explained in this README file and is demonstrated in a screencast video.
+This project is formed by two parts:
 
-The dataset used can be obtained from [here](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv) and contains marketing data about individuals. The data is related with direct marketing campaigns (phone calls) of a Portuguese banking institution. The classification goal is to predict whether the client will subscribe a bank term deposit. The result of the prediction appears in _`column y`_ and it is either _`yes`_ or _`no`_.
+- The first part consists of creating a machine learning production model using AutoML in Azure Machine Learning Studio, and then deploy the best model and consume it with the help of Swagger UI using the REST API endpoint and the key produced for the deployed model. 
+- The second part of the project is following the same steps but this time using Azure Python SDK to create, train, and publish a pipeline. For this part, I am using the Jupyter Notebook provided. The whole procedure is explained in this README file and the result is demonstrated in the screencast video.
+
+For both parts of the project I use the dataset that can be obtained from [here](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv) and contains marketing data about individuals. The data is related with direct marketing campaigns (phone calls) of a Portuguese banking institution. The classification goal is to predict whether the client will subscribe a bank term deposit. The result of the prediction appears in _`column y`_ and it is either _`yes`_ or _`no`_.
 
 ***
 ## Architectural Diagram
@@ -55,7 +58,7 @@ Once the model is deployed, I am using the ```endpoint.py``` script to interact 
 In this part of the project, I am using the Jupyter Notebook with the same keys, URI, dataset, cluster, and model names already created.
 
 - **Documentation:**
-The documentation includes: 1. the [screencast](https://youtu.be/tuWl0RYHsQI) that shows the entire process of the working ML application; and 2. this README file that describes the project and documents the main steps.
+The documentation includes: 1. the [screencast](https://youtu.be/0AKGw1YOcXw) that shows the entire process of the working ML application; and 2. this README file that describes the project and documents the main steps.
 
 ***
 
@@ -231,7 +234,7 @@ The purpose of this step is to create, publish and consume a pipeline using the 
 ***
 ## Screen Recording
 
-The screen recording can be found [here](https://youtu.be/tuWl0RYHsQI) and it shows the project in action. More specifically, the screencast demonstrates:
+The screen recording can be found [here](https://youtu.be/0AKGw1YOcXw) and it shows the project in action. More specifically, the screencast demonstrates:
 
 * The working deployed ML model endpoint
 * The deployed Pipeline
@@ -276,3 +279,4 @@ Meta-Learning Approach](https://www.automl.org/wp-content/uploads/2020/07/AutoML
 - [Deep learning vs. machine learning in Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/concept-deep-learning-vs-machine-learning)
 - [A Review of Azure Automated Machine Learning (AutoML)](https://medium.com/microsoftazure/a-review-of-azure-automated-machine-learning-automl-5d2f98512406)
 - [Supported data guardrails](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-configure-auto-features#supported-data-guardrails)
+- [Online Video Cutter](https://online-video-cutter.com/)
